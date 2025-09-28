@@ -34,12 +34,19 @@
 
     <!-- Page Header -->
     <header class="bg-white shadow">
-        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
             <h1 class="text-3xl font-bold text-gray-900">
                 {{ $heading }}
             </h1>
+
+            <!-- ✅ Create Job Button -->
+            <a href="/jobs/create"
+                class="inline-block rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600">
+                Create Job
+            </a>
         </div>
     </header>
+
 
     <!-- Page Content -->
     <main class="flex-grow">

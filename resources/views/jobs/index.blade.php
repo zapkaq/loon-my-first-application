@@ -3,14 +3,21 @@
         Jobs Page
     </x-slot:heading>
 
+    <!-- Create Job Button -->
+    <div class="mb-4">
+        <a href="/jobs/create" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-500">
+            Create Job
+        </a>
+    </div>
+
     <ul>
         @foreach ($jobs as $job)
             <li>
                 <div>
-                    <a href="/jobs/{{ $job['id'] }}" class="block px-4 py-6 border border-gray-200 rounded-lg">
+                    <a href="/jobs/{{ $job->id }}" class="block px-4 py-6 border border-gray-200 rounded-lg">
                         <div class="font-bold text-blue-500 text-sm">{{ $job->employer->name }}</div>
                         <div>
-                            <strong class="text-laracasts">{{ $job['title'] }}:</strong> Pays {{ $job['salary'] }} per year.
+                            <strong class="text-laracasts">{{ $job->title }}:</strong> Pays {{ $job->salary }} per year.
                         </div>
                     </a>
                 </div>
@@ -22,20 +29,11 @@
                         </span>
                     @endforeach
                 </div>
-
-                <a href="/jobs/{{ $job['id'] }}" class="text-blue-500 hover:underline">
-                    <strong class="text-laracasts">{{ $job->employer->name }}:</strong>
-                    {{ $job['title'] }} pays {{ $job['salary'] }} per year.
-                </a>
-
-                <a href="/jobs/{{ $job['id'] }}" class="text-blue-500 hover:underline">
-                    <strong>{{ $job['title'] }}:</strong> Pays {{ $job['salary'] }} per year.
-                </a>
             </li>
         @endforeach
     </ul>
 
-    {{-- ✅ Pagination Links --}}
+    {{-- Pagination Links --}}
     <div class="mt-6">
         {{ $jobs->links() }}
     </div>
